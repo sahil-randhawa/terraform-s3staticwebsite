@@ -3,17 +3,18 @@
 This repository contains Terraform code for creating an AWS S3 bucket, configuring it for website hosting, and uploading static files (HTML and images) to it. The configuration also includes setting up necessary bucket policies and access controls.
 
 ## Project Structure
-
+```bash
 ├── main.tf
 ├── provider.tf
 ├── variables.tf
+├── output.tf
 ├── website
-│ ├── index.html
-│ ├── error.html
-│ └── images
-│ └── profile.jpg
+│   ├── index.html
+│   ├── error.html
+│   └── images
+│       └── profile.jpg
 └── README.md
-
+```
 ## Prerequisites
 
 - [Terraform](https://www.terraform.io/downloads.html) (v0.14+)
