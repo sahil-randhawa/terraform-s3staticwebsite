@@ -1,4 +1,3 @@
-# create s3 bucket
 
 resource "aws_s3_bucket" "mybucket" {
   bucket = var.bucketname
@@ -35,7 +34,7 @@ resource "aws_s3_bucket_acl" "example" {
 resource "aws_s3_object" "index" {
   bucket = aws_s3_bucket.mybucket.id
   key    = "index.html"
-  source = "index.html"
+  source = "website/index.html"
   acl   = "public-read"
   content_type = "text/html"
 }
@@ -43,7 +42,7 @@ resource "aws_s3_object" "index" {
 resource "aws_s3_object" "error" {
   bucket = aws_s3_bucket.mybucket.id
   key    = "error.html"
-  source = "error.html"
+  source = "website/error.html"
   acl   = "public-read"
   content_type = "text/html"
 }
@@ -51,7 +50,7 @@ resource "aws_s3_object" "error" {
 resource "aws_s3_object" "profile"{
     bucket = aws_s3_bucket.mybucket.id
     key = "profile.jpg"
-    source = "profile.jpg"
+    source = "website/images/profile.jpg"
     acl = "public-read"
     content_type = "image/jpeg"
 } 
